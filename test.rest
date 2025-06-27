@@ -1,0 +1,38 @@
+### Variables
+@baseUrl = http://localhost:3000
+@accessToken =
+@refreshToken =
+@userId =
+
+### Sign up
+POST {{baseUrl}}/signup
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "12345678",
+  "name": "Test CR"
+}
+
+
+### Sign in
+POST {{baseUrl}}/signin
+Content-Type: application/json
+
+{
+  "email": "test@test.com",
+  "password": "12345678"
+}
+
+
+### Refresh token
+POST {{baseUrl}}/refresh-token
+Content-Type: application/json
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+### Get personal info
+GET {{baseUrl}}/personal-info/{{userId}}
+Authorization: Bearer {{accessToken}}
